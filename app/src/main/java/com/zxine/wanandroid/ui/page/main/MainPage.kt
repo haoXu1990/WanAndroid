@@ -22,30 +22,29 @@ import com.zxine.wanandroid.ui.router.AppRouter
 import com.zxine.wanandroid.ui.widget.MainBottomNavBarView
 
 @Composable
-fun MainPage(navController: NavHostController, scaffoldState: ScaffoldState) {
+fun MainPage(navHostController: NavHostController, scaffoldState: ScaffoldState) {
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-        bottomBar = { buttomBarWidget(navController) },
+        bottomBar = { bottomBarWidget(navHostController) },
         content = {
             NavHost(
-                navController = navController,
+                navController = navHostController,
                 startDestination = AppRouter.HOME,
             ) {
-
                 // 首页
                 composable(route = AppRouter.HOME) {
-                    HomePage(navCtrl = navController, scaffoldState = scaffoldState)
+                    HomePage(navCtrl = navHostController, scaffoldState = scaffoldState)
                 }
 
                 // 搜藏
                 composable(route = AppRouter.COLLECTION) {
-                    CollectPage(navCtrl = navController, scaffoldState = scaffoldState)
+                    CollectPage(navCtrl = navHostController, scaffoldState = scaffoldState)
                 }
 
                 // 我的
                 composable(route = AppRouter.PERSION) {
-                    PersionPage(navCtrl = navController, scaffoldState = scaffoldState)
+                    PersionPage(navCtrl = navHostController, scaffoldState = scaffoldState)
                 }
             }
             
@@ -54,12 +53,7 @@ fun MainPage(navController: NavHostController, scaffoldState: ScaffoldState) {
 }
 
 @Composable
-fun conTentWidget() {
-
-}
-
-@Composable
-fun buttomBarWidget(navController: NavHostController) {
+fun bottomBarWidget(navController: NavHostController) {
     val bottomBaseColor = Color.Transparent
     val navbackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navbackStackEntry?.destination

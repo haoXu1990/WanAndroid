@@ -1,4 +1,4 @@
-package com.zxine.wanandroid.ui.viewmodel.home
+package com.zxine.wanandroid.viewmodel.home
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -13,9 +13,7 @@ class HomeViewModel@Inject constructor() : ViewModel() {
     var viewStates by mutableStateOf(HomeViewState())
         private set
 
-
     val pageIndex by mutableStateOf(0)
-
 
     init {
         viewStates = viewStates.copy(
