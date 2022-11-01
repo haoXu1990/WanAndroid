@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id "kotlin-kapt"
+    id "kotlin-parcelize"
     id "dagger.hilt.android.plugin"
 }
 
@@ -66,6 +67,14 @@ dependencies {
     // viewPager
     implementation "com.google.accompanist:accompanist-pager:0.20.2"
     implementation "com.google.accompanist:accompanist-pager-indicators:0.18.0"
+    //paging分页库
+    implementation "androidx.paging:paging-runtime:3.1.0-rc01"
+    testImplementation "androidx.paging:paging-common:3.1.0-rc01"
+    implementation "androidx.paging:paging-compose:1.0.0-alpha14"
+
+    //下拉刷新
+    implementation "com.google.accompanist:accompanist-swiperefresh:0.18.0"
+
 
     // hilt inject framework
     implementation "com.google.dagger:hilt-android:2.38.1"
@@ -81,5 +90,11 @@ dependencies {
     implementation "com.google.accompanist:accompanist-coil:0.15.0"
     //系统ui控制器
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.18.0"
+
+
+    //http request
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.google.code.gson:gson:2.8.6"
 
 }
