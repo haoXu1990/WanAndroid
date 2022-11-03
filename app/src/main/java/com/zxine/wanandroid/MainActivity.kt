@@ -8,7 +8,6 @@ import androidx.compose.animation.core.SnapSpec
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.rememberScaffoldState
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
@@ -29,9 +28,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        setContent {
-            navStartPage()
-        }
+        setContent { navStartPage() }
     }
 }
 
@@ -58,25 +55,17 @@ fun navStartPage() {
                 PageType.MainPageType -> {
                     MainPage(navHostController = navHostController, scaffoldState = scaffoldState)
                 }
-                else -> {}
             }
-
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     WanAndroidTheme {
-        Greeting("Android")
+        SplashPage()
     }
 }

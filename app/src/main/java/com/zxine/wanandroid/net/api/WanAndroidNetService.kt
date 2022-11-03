@@ -14,4 +14,7 @@ interface WanAndroidNetService {
     // 首页
     @GET("/article/list/{page}/json")
     suspend fun getIndexList(@Path("page") page: Int): BasicBean<ListWrapper<Article>>
+
+    @GET("/user_article/list/{page}/json")
+    suspend fun getSquareData(@Path("page") page: Int): BasicBean<ListWrapper<Article>>
 }

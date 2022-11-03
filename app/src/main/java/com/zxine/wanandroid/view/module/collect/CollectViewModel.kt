@@ -1,4 +1,4 @@
-package com.zxine.wanandroid.viewmodel.collect
+package com.zxine.wanandroid.view.module.collect
 
 
 import androidx.lifecycle.ViewModel

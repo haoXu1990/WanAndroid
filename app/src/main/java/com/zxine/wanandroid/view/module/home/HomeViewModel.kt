@@ -1,4 +1,4 @@
-package com.zxine.wanandroid.viewmodel.home
+package com.zxine.wanandroid.view.module.home
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

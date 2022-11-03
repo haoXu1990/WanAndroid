@@ -1,4 +1,4 @@
-package com.zxine.wanandroid.viewmodel.person
+package com.zxine.wanandroid.view.module.person
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

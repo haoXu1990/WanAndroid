@@ -36,16 +36,15 @@ import com.google.accompanist.pager.rememberPagerState
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.zxine.wanandroid.ui.page.home.question.QuestionPage
 import com.zxine.wanandroid.ui.page.home.recommend.RecommendPage
-import com.zxine.wanandroid.ui.page.home.square.SquarePage
-import com.zxine.wanandroid.viewmodel.home.HomeViewModel
+//import com.zxine.wanandroid.ui.page.home.square.SquarePage
+import com.zxine.wanandroid.view.module.home.HomeViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun HomePage(navCtrl: NavHostController,
-             scaffoldState: ScaffoldState,
+fun HomePage(
              viewModel: HomeViewModel = hiltViewModel()) {
 
     val titles = viewModel.viewStates.titles
@@ -132,7 +131,7 @@ fun HomePage(navCtrl: NavHostController,
             state = pageState,
             ) {page ->
             when (page) {
-                0 -> SquarePage()
+//                0 -> SquarePage(navHostCtrl = navCtrl, scaffoldState= scaffoldState)
                 1 -> RecommendPage()
                 2 -> QuestionPage()
             }

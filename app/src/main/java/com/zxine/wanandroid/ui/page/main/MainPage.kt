@@ -17,7 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.zxine.wanandroid.ui.page.collect.CollectPage
 import com.zxine.wanandroid.ui.page.home.HomePage
-import com.zxine.wanandroid.ui.page.person.PersionPage
+import com.zxine.wanandroid.ui.page.person.PersonPage
 import com.zxine.wanandroid.ui.router.AppRouter
 import com.zxine.wanandroid.ui.widget.MainBottomNavBarView
 
@@ -34,22 +34,21 @@ fun MainPage(navHostController: NavHostController, scaffoldState: ScaffoldState)
             ) {
                 // 首页
                 composable(route = AppRouter.HOME) {
-                    HomePage(navCtrl = navHostController, scaffoldState = scaffoldState)
+                    HomePage()
                 }
 
                 // 搜藏
                 composable(route = AppRouter.COLLECTION) {
-                    CollectPage(navCtrl = navHostController, scaffoldState = scaffoldState)
+                    CollectPage()
                 }
 
                 // 我的
                 composable(route = AppRouter.PERSION) {
-                    PersionPage(navCtrl = navHostController, scaffoldState = scaffoldState)
+                    PersonPage()
                 }
             }
-            
         }
-        )
+    )
 }
 
 @Composable
